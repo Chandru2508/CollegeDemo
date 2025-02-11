@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student SignUp</title>
+</head>
+<body style="background-color: #e6f7ff;"></body>
+<h2 style="text-align: center;">Student SignUp</h2>
+<form action="StudentSignupServlet" method="post">
+    <table style="margin: 0 auto; border-spacing: 10px; background-color: #f2f2f2; padding: 10px; border-radius: 5px;" cellpadding="10" cellspacing="5">
+        <tr>
+            <td style="text-align: right;">Username:</td>
+            <td><input type="text" name="username" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Password:</td>
+            <td><input type="password" name="password" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Email:</td>
+            <td><input type="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Mobile Number:</td>
+            <td><input type="tel" name="mobile" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Gender:</td>
+            <td>
+                <input type="radio" name="gender" value="male" required> Male
+                <input type="radio" name="gender" value="female" required> Female
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Date of Birth:</td>
+            <td><input type="date" name="dob" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">City:</td>
+            <td>
+                <select name="city" required>
+                    <option value="coimbatore">Coimbatore</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="sathy">Sathy</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="submit" value="Sign Up">
+            </td>
+        </tr>
+    </table>
+</form>
+</html>
