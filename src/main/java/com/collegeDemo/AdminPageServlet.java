@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class AdminPageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    private static final String jdbc_url = "jdbc:mysql://localhost:3306/college?serverTimezone=UTC&useSSL=false";
+    private static final String jdbc_url = "jdbc:mysql://localhost:3306/college";
     private static final String jdbc_user = "root";
     private static final String jdbc_pass = "Hema2728@2024";
 
@@ -105,7 +105,7 @@ public class AdminPageServlet extends HttpServlet {
                     out.println("<td><button type='button'><a href='EditStudentMarksServlet?id=" + rs.getLong("student_id") + "'>Edit</a></td>");
                     out.println("<td><button type='button'><a href='DeleteStudentMarksServlet?id=" + rs.getLong("student_id") + "'>Delete</a></button></td>");
                     out.println("</tr>");
-                 }
+                 } 
 
                  out.println("<tr>");
                  out.println("<td><button type='button'><a href='InsertStudentMarks.html'>Insert</a></button></td>");

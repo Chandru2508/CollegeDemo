@@ -7,6 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -42,8 +43,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
       
       if (rs.next()) {
          request.setAttribute("username", userName);
-         rd = request.getRequestDispatcher("StudentPageServlet");
-         rd.forward(request, response);
+         rd = request.getRequestDispatcher("StudentMarksServlet");
+         rd.include(request, response);
          out.println("<h4>Login SucessFull</h4>");
       } 
       else {

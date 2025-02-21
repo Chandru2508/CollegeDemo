@@ -47,13 +47,14 @@ public class StudentMarksServlet extends HttpServlet {
 
         String query = "SELECT * FROM student_marks WHERE student_id = (SELECT student_id FROM students WHERE username = ?)";
         // Fetch student marks
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            try (Connection con = DriverManager.getConnection(jdbc_url, jdbc_user, jdbc_pass);
-                 PreparedStatement stmt = con.prepareStatement(query)) {
-                
+        
+            try{
+            	
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            	Connection con = DriverManager.getConnection(jdbc_url, jdbc_user, jdbc_pass);
+                PreparedStatement stmt = con.prepareStatement(query);
                 stmt.setString(1, userName);
+                
                 ResultSet rs = stmt.executeQuery();
 
                 if (rs.next()) {
@@ -77,7 +78,7 @@ public class StudentMarksServlet extends HttpServlet {
                 rs.close();
                 stmt.close();
                 con.close();
-            }
+            
         } 
         catch (ClassNotFoundException | SQLException e) {
             out.println("<p style='color:red;'>Error: " + e.getMessage() + "</p>");

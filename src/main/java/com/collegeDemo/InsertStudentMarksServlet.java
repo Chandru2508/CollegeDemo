@@ -26,7 +26,7 @@ public class InsertStudentMarksServlet extends HttpServlet {
       
 	   PrintWriter out = response.getWriter();
 	   
-      Long id = Long.parseLong(request.getParameter("id"));
+      Long id = Long.parseLong(request.getParameter("student_id"));
       int mathematics = Integer.parseInt(request.getParameter("mathematics"));
       int physics = Integer.parseInt(request.getParameter("physics"));
       int chemistry = Integer.parseInt(request.getParameter("chemistry"));
